@@ -87,9 +87,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: hotel_moreno_admin_production
-    username: hotel_moreno_admin
-    password: <%= ENV["HOTEL_MORENO_ADMIN_DATABASE_PASSWORD"] %>
+    url: <%= ENV["DATABASE_URL"] %>
   cache:
     <<: *primary_production
     database: hotel_moreno_admin_production_cache
