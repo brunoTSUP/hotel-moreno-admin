@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "whatsapp_tests#index"
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   get  "/webhooks/whatsapp", to: "webhooks/whatsapp#verify"
   post "/webhooks/whatsapp", to: "webhooks/whatsapp#receive"
+  post "whatsapp/test", to: "whatsapp_tests#create",  as: :whatsapp_test
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker

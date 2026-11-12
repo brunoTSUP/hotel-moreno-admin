@@ -1,0 +1,20 @@
+<div style="max-width: 500px; margin: 100px auto; text-align: center;">
+  <h1>Teste WhatsApp API</h1>
+
+  <p>Clique no botão para enviar uma mensagem de teste.</p>
+
+  <%= button_to "Enviar WhatsApp",
+      whatsapp_test_path,
+      method: :post,
+      style: "padding: 15px 30px; background: #25D366;
+              color: white; border: none; border-radius: 8px;
+              font-size: 16px; cursor: pointer;" %>
+
+  <% if flash[:notice] %>
+    <p style="color: green;"><%= flash[:notice] %></p>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <p style="color: red;"><%= flash[:alert] %></p>
+  <% end %>
+</div>
