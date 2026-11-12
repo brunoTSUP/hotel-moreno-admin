@@ -16,10 +16,11 @@ class WhatsappSender
     request.body = {
       messaging_product: "whatsapp",
       to: ENV.fetch("WHATSAPP_TEST_RECIPIENT"),
-      type: "template",
-      template: {
-        name: "hello_world",
-        language: { code: "en_US" }
+      type: "text",
+      text: {
+        body: "Bem-vindo ao Hotel Moreno!\n\n" \
+              "Código do quarto: 123456\n" \
+              "Senha do Wi-Fi: Moreno2026"
       }
     }.to_json
 
